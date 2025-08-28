@@ -1,40 +1,40 @@
 /**
- * Example 1-2. Loading an image with a fallback
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 1-2. 이미지 로딩 에러에 대비하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Loads an image. If there's an error loading the image, uses a fallback
- * image URL instead.
+ * 이미지를 읽어 들인다. 읽는 도중 에러가 발생하면
+ * 대비책으로 마련한 URL을 대신 사용한다.
  *
- * @param url The image URL to load
- * @param fallbackUrl The fallback image to load if there's an error
- * @returns a Promise that resolves to an Image element to insert into the DOM
+ * @param url 읽어 들인 이미지의 URL
+ * @param fallbackUrl 에러가 발생한 경우 대신 사용할 이미지의 URL
+ * @returns DOM에 삽입할 Image 엘리먼트를 해결하는 Promise
  */
 function loadImage(url, fallbackUrl) {
   return new Promise((resolve, reject) => {
     const image = new Image();
 
-    // Attempt to load the image from the given URL
+    // 주어진 URL에 있는 이미지 로딩을 시도
     image.src = url;
 
-    // The image triggers the `load` event when it is successfully loaded.
+    // 성공적으로 읽어 들이면 이미지에서 'load' 이벤트가 발생한다.
     image.addEventListener('load', () => {
-      // The now-loaded image is used to resolve the `Promise`
+      // 읽어 들인 이미지를 사용해 Promise 해결
       resolve(image);
     });
 
-    // If an image failed to load, it triggers the `error` event.
+    // 이미지를 읽어 들이지 못했으면 'error' 이벤트가 발생한다.
     image.addEventListener('error', error => {
-      // Reject the `Promise` in one of two scenarios:
-      // (1) There is no fallback URL
-      // (2) The fallback URL is the one that failed
+      // 다음 두 가지 경우에 Promise를 거부한다:
+      // (1) 대신할 URL이 없는 경우
+      // (2) 대신할 URL에서 읽는 것도 실패한 경우
       if (!fallbackUrl || image.src === fallbackUrl) {
         reject(error);
       } else {
-        // If this is executed, it means the original image failed to load.
-        // Try to load the fallback.
-        image.src = fallbackUrl; 
+        // 이 코드가 실행된다면, 원하는 이미지를 읽어 들이지 못했다는 의미이다.
+        // 대신할 이미지를 읽어 들이도록 시도한다.
+        image.src = fallbackUrl;
       }
     });
   });
@@ -42,8 +42,8 @@ function loadImage(url, fallbackUrl) {
 
 loadImage('https://example.com/profile.jpg', 'https://example.com/fallback.jpg')
   .then(image => {
-    // `container` is an element in the DOM where the image will go
+    // container는 DOM에 이미 존재하는 엘리먼트로서, 이미지를 여기에 추가한다.
     container.appendChild(image);
   }).catch(error => {
-    console.error('Image load failed');
+    console.error('이미지 로딩 실패');
   });

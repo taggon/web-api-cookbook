@@ -1,12 +1,12 @@
 /**
- * Example 3-1. Creating relative URLs
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 3-1. 상대적 URL 작성하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Given a relative path and a base URL, resolves a full absolute URL.
- * @param relativePath The relative path for the URL
- * @param baseUrl A valid URL to use as the base.
+ * 주어진 상대 경로와 기준 URL을 사용해 전체의 절대적 URL을 구한다.
+ * @param relativePath URL의 상대 경로
+ * @param baseUrl 기준으로 사용할 올바른 URL
  */
 function resolveUrl(relativePath, baseUrl) {
   return new URL(relativePath, baseUrl).href;
@@ -19,7 +19,7 @@ console.log(resolveUrl('/api/users', 'https://example.com'));
 console.log(resolveUrl('/api/v1/users', 'https://example.com'));
 
 // https://example.com/api/v1/users
-// Note that /api/v2 is discarded due to the leading slash in /api/v1/users
+// /api/v1/users 맨 앞에 있는 슬래시 때문에 /api/v2 부분이 무시됩니다.
 console.log(resolveUrl('/api/v1/users', 'https://example.com/api/v2'));
 
 // https://example.com/api/v1/users

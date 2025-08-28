@@ -1,6 +1,6 @@
 /**
- * Example 5-4. An encapsulated database
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 5-4. 데이터베이스 캡슐화
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const contactsDb = {
@@ -13,7 +13,7 @@ const contactsDb = {
         keyPath: 'id',
         autoIncrement: true
       });
-    }); 
+    });
 
     request.addEventListener('success', () => {
       this.db = request.result;
@@ -28,10 +28,10 @@ const contactsDb = {
       .getAll();
 
     request.addEventListener('success', () => {
-      console.log('Got contacts:', request.result);
+      console.log('가져온 연락처:', request.result);
       onSuccess(request.result);
     });
   },
 
-  // other operations follow similarly
+  // 필요한 다른 작업도 비슷하게 수행한다.
 };

@@ -1,6 +1,6 @@
 /**
- * Example 7-4. Remembering the username field
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 7-4. username 필드의 값 기억하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 const form = document.querySelector('#login-form');
 

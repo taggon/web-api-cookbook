@@ -1,16 +1,15 @@
 /**
- * Example 1-10. Using the loadJSON helper
- * From "Web Browser API Cookbook" by Joe Attardi
- * 
- * Demonstrates the usage of the loadJSON helper function
- * from Example 1-8.
+ * 예 1-10. loadJSON 헬퍼 함수 사용
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
+ *
+ * 예 1-8에서 작성한 loadJSON 헬퍼 함수의 사용법을 보여준다.
  */
 
-// Using .then
+// .then 사용
 loadJSON('/api/users/1').then(user => {
-  console.log('Got user:', user);
+  console.log('사용자 정보:', user);
 })
 
-// Using await
+// await 사용
 const user = await loadJSON('/api/users/1');
-console.log('Got user:', user);
+console.log('사용자 정보:', user);

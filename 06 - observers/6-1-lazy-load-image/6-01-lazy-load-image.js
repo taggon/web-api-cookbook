@@ -1,24 +1,24 @@
 /**
- * Example 6-1. Lazily loading an image with IntersectionObserver
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 6-1. IntersectionObserver를 사용한 게으른 이미지 로딩
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Observes an image element for lazy loading.
- * 
- * @param img a reference to the image DOM node
- * @param url the URL of the image to load
+ * 게으른 이미지 로딩을 위한 감시
+ *
+ * @param img 이미지 DOM 노드의 참조
+ * @param url 로드할 이미지의 URL
  */
 function lazyLoad(img, url) {
   const observer = new IntersectionObserver(entries => {
-    // isIntersecting becomes true once the image enters the viewport.
-    // At that point set the src URL, and stop listening.
+    // 이미지가 뷰포트에 들어오면 isIntersecting의 값이 true가 된다.
+    // 이 시점에서 src의 URL를 설정하고 감시를 중단한다.
     if (entries[0].isIntersecting) {
       img.src = url;
       observer.disconnect();
     }
   });
 
-  // Start observing the image element
+  // 이미지 엘리먼트의 감시를 시작한다.
   observer.observe(img);
 }

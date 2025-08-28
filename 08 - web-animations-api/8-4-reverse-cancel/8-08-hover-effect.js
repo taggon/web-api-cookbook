@@ -1,21 +1,21 @@
 /**
- * Example 8-8. The hover effect
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 8-8. 호버 효과
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 element.addEventListener('mouseover', async () => {
   if (animation) {
-    // There was already an animation in progress. Instead of starting a new animation,
-    // reverse the current one.
+    // 애니메이션이 이미 실행 중이므로 새로 시작하지 말고,
+    // 기존 애니메이션을 역방향으로 재생한다.
     animation.reverse();
   } else {
-    // Nothing is in progress, so start a new animation.
+    // 진행 중인 애니메이션이 없으므로 새로운 애니메이션을 시작한다.
     animation = element.animate([
       { transform: 'scale(1)' },
       { transform: 'scale(2)' }
     ], { duration: 1000, fill: 'both' });
 
-    // Once the animation finishes, set the current animation to null.
+    // 애니메이션이 완료되면 현재 애니메이션 변수를 null로 설정한다.
     await animation.finished;
     animation = null;
   }

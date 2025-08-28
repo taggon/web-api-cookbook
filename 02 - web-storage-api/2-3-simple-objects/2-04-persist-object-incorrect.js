@@ -1,9 +1,8 @@
 /**
- * Example 2-4. Attempting to persist an array
- * From "Web Browser API Cookbook" by Joe Attardi
- * 
- * Demonstrates that you can't use `localStorage.setItem` to persist an
- * object directly.
+ * 예 2-4. 배열 저장 시도
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
+ *
+ * `localStorage.setItem`을 사용해 객체를 바로 저장할 수 없음을 보여준다.
  */
 
 const userProfile = {
@@ -13,5 +12,5 @@ const userProfile = {
 
 localStorage.setItem('userProfile', userProfile);
 
-// Prints '[object Object]'
+// [object Object] 출력
 console.log(localStorage.getItem('userProfile'));

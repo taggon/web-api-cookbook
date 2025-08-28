@@ -1,6 +1,6 @@
 /**
- * Example 7-18. Revalidating on blur
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 7-18. blur 이벤트 발생시 유효성 검사 재실행
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 form.elements.password.addEventListener('blur', async event => {

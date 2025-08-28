@@ -1,13 +1,13 @@
 /**
- * Example 5-4. Deleting a contact
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 5-4. 연락처 삭제
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Deletes a contact from the database, then re-renders the table.
- * @param contactsDb The IndexedDB database.
- * @param contact The contact object to delete
- * @param onSuccess A callback function that is executed when the contact is deleted
+ * 연락처를 데이터베이스에서 제거한 후, 테이블을 다시 렌더링한다.
+ * @param contactsDb IndexedDB 데이터베이스
+ * @param contact 삭제할 연락처 객체
+ * @param onSuccess 연락처를 삭제한 후 실행할 콜백 함수
  */
 function deleteContact(contactsDb, contact, onSuccess) {
   const request = contactsDb
@@ -16,11 +16,11 @@ function deleteContact(contactsDb, contact, onSuccess) {
     .delete(contact.id);
 
   request.addEventListener('success', () => {
-    console.log('Deleted contact:', contact);
+    console.log('연락처 삭제됨:', contact);
     onSuccess();
   });
 
   request.addEventListener('error', () => {
-    console.error('Error deleting contact:', request.error);
+    console.error('연락처 삭제 중 발생한 오류:', request.error);
   });
 }

@@ -1,14 +1,14 @@
 /**
- * Example 2-10. Using a factory that adds a toJSON function
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 2-10. 팩토리를 사용한 toJSON 함수 추가
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * A factory function to create a user profile object,
- * with the lastUpdated property set to today and a toJSON method.
+ * 사용자 프로필 객체를 생성하는 팩토리 함수
+ * lastUpdated 프로퍼티를 오늘 날짜로 설정하고 toJSON 메서드를 추가한다.
  *
- * @param firstName The user's first name
- * @param lastName The user's last name
+ * @param firstName 사용자의 이름
+ * @param lastName 사용자의 성
  */
 function createUser(firstName, lastName) {
   return {
@@ -19,8 +19,8 @@ function createUser(firstName, lastName) {
       return {
         firstName: this.firstName,
         lastName: this.lastName,
-        lastUPdated: this.lastUpdated.getTime();
-      }
+        lastUPdated: this.lastUpdated.getTime()
+      };
     }
   }
 }
