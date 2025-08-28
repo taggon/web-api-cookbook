@@ -1,6 +1,6 @@
 /**
- * Example 14-9. Pasting text into a selection
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 14-10. 선택 영역으로 붙여넣기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 async function pasteToSelection(textarea) {
@@ -12,6 +12,6 @@ async function pasteToSelection(textarea) {
     const newValue = currentValue.slice(0, selectionStart) + clipboardValue + currentValue.slice(selectionEnd);
     textarea.value = newValue;
   } catch (error) {
-    console.error('Clipboard error:', error);
+    console.error('클립보드 오류:', error);
   }
 }

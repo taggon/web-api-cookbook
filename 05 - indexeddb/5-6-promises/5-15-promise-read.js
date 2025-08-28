@@ -1,13 +1,14 @@
 /**
- * Example 5-15. Getting objects from a store with a Promise
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 5-15. Promise를 활용하여 스토어에서 객체 가져오기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Reads the contacts from the database.
- * @returns a Promise that is resolved with the contacts, or rejected with an error
+ * 데이터베이스에서 연락처를 읽는다.
+ * @params contactsDb 데이터베이스
+ * @returns 연락처와 함께 해결되는 Promise. 오류가 발생하면 거부된다.
  */
-function getContacts() {
+function getContacts(contactsDb) {
   return new Promise((resolve, reject) => {
     const request = contactsDb
       .transaction(['contacts'], 'readonly')
@@ -15,12 +16,12 @@ function getContacts() {
       .getAll();
 
     request.addEventListener('success', () => {
-      console.log('Got contacts:', request.result);
+      console.log('가져온 연락처:', request.result);
       resolve(request.result);
     });
 
     request.addEventListener('error', () => {
-      console.error('Error loading contacts:', request.error);
+      console.error('연락처를 읽는 중 발생한 오류:', request.error);
       reject(request.error);
     });
   });

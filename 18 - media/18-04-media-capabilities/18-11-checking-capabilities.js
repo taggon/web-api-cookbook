@@ -1,6 +1,6 @@
 /**
- * Example 18-11. Checking media capabilities
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 18-11. 미디어 기능 확인
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 navigator.mediaCapabilities.decodingInfo({
@@ -10,7 +10,7 @@ navigator.mediaCapabilities.decodingInfo({
   }
 }).then(result => {
   if (result.supported) {
-    // mp3 audio is supported!
+    // MP3 오디오가 지원된다!
   }
 });
 
@@ -21,6 +21,6 @@ navigator.mediaCapabilities.decodingInfo({
   }
 }).then(result => {
   if (result.supported) {
-    // WebM audio is supported with the opus codec
+    // Opus 코덱을 사용한 WebM 오디오가 지원된다!
   }
 });

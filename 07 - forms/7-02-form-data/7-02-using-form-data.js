@@ -1,21 +1,21 @@
 /**
- * Example 7-2. Adding data with the FormData API
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 7-2. FormData API를 사용한 데이터 추가
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
-// In a real world application, the API token would be stored somewhere and
-// not hard coded like this.
+// 실제 애플리케이션에서는 API 토큰을 다른 방식으로 저장한다.
+// 이와 같이 하드코딩하지 않는다.
 const apiToken = 'aBcD1234EfGh5678IjKlM';
 
 form.addEventListener('submit', event => {
-  // Important: Stop the browser from automatically submitting the form
+  // 중요! 브라우저가 자동으로 실행하는 폼 전송을 막는다.
   event.preventDefault();
 
-  // Set up a FormData object and add the API token to it.
+  // FormData 객체를 만들고 API 토큰을 추가한다.
   const data = new FormData(event.target);
   data.set('apiToken', apiToken);
 
-  // Use the Fetch API to send this FormData object to the endpoint.
+  // Fetch API를 사용해 FormData 객체를 엔드포인트로 전송한다.
   fetch('/api/form', {
     method: 'POST',
     body: data

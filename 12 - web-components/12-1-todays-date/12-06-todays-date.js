@@ -1,6 +1,6 @@
 /**
- * Example 12-6. A custom element that formats the current date
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-6. 현재 날짜를 포맷하는 커스텀 엘리먼트
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 class TodaysDate extends HTMLElement {

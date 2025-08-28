@@ -1,8 +1,8 @@
 /**
- * Example 13-3. Styling the backdrop
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 13-3. 백드롭 스타일 설정
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 #alert::backdrop {
-  background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.75);
 }

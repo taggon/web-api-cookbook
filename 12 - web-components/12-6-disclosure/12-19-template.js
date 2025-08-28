@@ -1,6 +1,6 @@
 /**
- * Example 12-19. The disclosure component template
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-19. 더보기 컴포넌트 템플릿
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const template = document.createElement('template');

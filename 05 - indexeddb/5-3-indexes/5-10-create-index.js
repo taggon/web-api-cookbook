@@ -1,13 +1,12 @@
 /**
- * Example 5-4. Defining an index when the object store is created
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 5-4. 객체 저장소를 생성할 때 인덱스 정의하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Opens the database, creating the object store and index if needed.
- * Once the database is ready, `onSuccess` will be called with the database object.
- * 
- * @param onSuccess A callback function that is executed when the database is ready
+ * 데이터베이스를 열고, 필요한 경우 객체 저장소를 생성한다.
+ * 데이터베이스가 준비되면 onSuccess가 호출되고 데이터베이스 객체가 인수로 전달된다.
+ * @param onSuccess 데이터베이스가 준비될 때 실행될 콜백 함수
  */
 function openDatabase(onSuccess) {
   const request = indexedDB.open('employees');
@@ -15,14 +14,13 @@ function openDatabase(onSuccess) {
   request.addEventListener('upgradeneeded', () => {
     const db = request.result;
 
-    // New employee objects will be given an auto-generated 
-    // `id` property which serves as its key.
+    // 새 직원 객체에는 자동으로 생성된 'id' 프로퍼티가 키로 사용된다.
     const employeesStore = db.createObjectStore('employees', {
       keyPath: 'id',
       autoIncrement: true,
     });
 
-    // Create an index on the `department` property called `department`.
+    // 'department' 프로퍼티에 대해 'department' 인덱스를 생성한다.
     employeesStore.createIndex('department', 'department');
   });
 
@@ -30,4 +28,3 @@ function openDatabase(onSuccess) {
     onSuccess(request.result);
   });
 }
-

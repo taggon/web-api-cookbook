@@ -1,6 +1,6 @@
 /**
- * Example 10-3. Promisified readFileContent function
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 10-3. Promise가 적용된 readFileContent 함수
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 function readFileContent(file) {
@@ -22,5 +22,5 @@ try {
   const textArea = document.querySelector('.file-content-textarea');
   textArea.textContent = content;
 } catch (error) {
-  console.error('Error reading file content:', error);
+  console.error('파일 콘텐츠를 읽는 중 오류 발생:', error);
 }

@@ -1,6 +1,6 @@
 /**
- * Example 13-5. Event listeners for the confirmation dialog
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 13-5. 확인 대화창의 이벤트 리스너
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const dialog = document.querySelector('#confirm');
@@ -11,23 +11,23 @@ confirmButton.addEventListener('click', () => {
 });
 
 cancelButton.addEventListener('click', () => {
-  // Close the dialog with a return value of "cancel"
+  // 'cancel' 값을 전달하며 대화창을 닫는다.
   dialog.close('cancel');
 });
 
 dialog.addEventListener('cancel', () => {
-  // Canceling with the Escape key doesn't set a return value.
-  // Set it to "cancel" here so the close event handler will get
-  // the proper value.
+  // 이스케이프 키를 눌러서 창을 닫으면 반환값을 설정하지 않는다.
+  // 따라서 이 이벤트에서 'cancel' 값을 설정하여
+  // close 이벤트에서 적절한 값을 확인할 수 있도록 한다.
   dialog.returnValue = 'cancel';
 });
 
 dialog.addEventListener('close', () => {
   if (dialog.returnValue === 'confirm') {
-    // The user clicked the Confirm button.
-    // Perform the action, such as creating or deleting data.
+    // 사용자가 확인 버튼을 클릭한 경우.
+    // 데이터를 저장하거나 제거하는 등의 동작을 수행한다.
   } else {
-    // The user clicked the Cancel button or pressed the Escape key.
-    // Don't perform the action.
+    // 사용자가 취소 버튼을 클릭하거나 이스케이프 키를 누른 경우.
+    // 아무 동작도 수행하지 않는다.
   }
 });

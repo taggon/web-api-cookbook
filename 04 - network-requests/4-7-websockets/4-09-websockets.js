@@ -1,9 +1,9 @@
 /**
- * Example 4-9. Creating a WebSocket connection
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 4-9. 웹소켓 연결 생성
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
-// Open the WebSocket connection (the URL scheme should be ws: or wss:)
+// 웹소켓 접속을 연다. URL 스키마는 ws: 또는 wss: 여야 한다.
 const socket = new WebSocket(url);
 
 socket.addEventListener('open', onSocketOpened);
@@ -12,17 +12,17 @@ socket.addEventListener('error', handleError);
 socket.addEventListener('close', onSocketClosed);
 
 function onSocketOpened() {
-  console.log('Socket ready for messages');
+  console.log('소켓 준비 완료');
 }
 
 function handleMessage(event) {
-  console.log('Received message:', event.data);
+  console.log('메시지 수신:', event.data);
 }
 
 function handleError(event) {
-  console.log('Socket error:', event);
+  console.log('소켓 에러:', event);
 }
 
 function onSocketClosed() {
-  console.log('Connection was closed');
+  console.log('접속이 종료됨');
 }

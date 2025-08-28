@@ -1,12 +1,12 @@
 /**
- * Example 15-12. Sending performance entries in batches
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 15-12. 성능 엔트리 일괄 전송
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const analyticsEndpoint = 'https://example.com/api/analytics';
 
-// An array to hold buffered entries. Once the buffer reaches the desired size,
-// all entries are sent in a single request.
+// 엔트리를 모아 둘 버퍼 배열. 버퍼가 설정한 크기에 도달하면,
+// 모든 엔트리를 하나로 묶어서 한 번의 요청으로 전송한다.
 const BUFFER_SIZE = 10;
 let buffer = [];
 
@@ -16,7 +16,7 @@ const observer = new PerformanceObserver(entries => {
       buffer.push(entry);
     }
 
-    // If the buffer has reached its target size, send the analytics request.
+    // 버퍼가 설정한 크기가 되면, 분석 요청을 보낸다.
     if (buffer.length === BUFFER_SIZE) {
       fetch(analyticsEndpoint, {
         method: 'POST',
@@ -26,7 +26,7 @@ const observer = new PerformanceObserver(entries => {
         }
       });
 
-      // Reset the buffer now that the batched entries have been sent
+      // 이제 버퍼를 재설정하고 모든 엔트리를 한꺼번에 전송한다.
       buffer = [];
     }
   }

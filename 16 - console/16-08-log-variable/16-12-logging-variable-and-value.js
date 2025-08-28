@@ -1,9 +1,9 @@
 /**
- * Example 16-12. Logging a variable and its value
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 16-12. 변수와 변수의 값 출력
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const username = 'sysadmin';
 
-// logs { username: 'sysadmin' }
+// 출력: { username: 'sysadmin' }
 console.log({ username });

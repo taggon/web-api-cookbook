@@ -1,8 +1,7 @@
 /**
- * Example 2-14. Removing an item from local storage
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 2-14. 로컬 스토리지에서 데이터 삭제하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
-// This is a safe operation. If the key doesn't exist,
-// no exception is thrown.
+// 키가 없어도 예외가 발생하지 않으므로 안전한 작업이다.
 localStorage.removeItem('my-key');

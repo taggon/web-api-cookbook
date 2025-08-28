@@ -1,32 +1,32 @@
 /**
- * Example 4-8. Opening an SSE connection
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 4-8. SSE 접속 열기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const events = new EventSource('https://example.com/events');
 
-// Fired once connected
+// 연결이 이루어지면 발생하는 이벤트
 events.addEventListener('open', () => {
-  console.log('Connection is open');
+  console.log('연결이 열렸습니다');
 });
 
-// Fired if a connection error occurs
+// 연결 에러가 있을 때 발생하는 이벤트
 events.addEventListener('error', event => {
-  console.log('An error occurred:', event);
+  console.log('에러 발생:', event);
 });
 
-// Fired when receiving an event with a type of "heartbeat"
+// 'heartbeat' 타입의 이벤트를 수신할 때 발생
 events.addEventListener('heartbeat', event => {
-  console.log('got heartbeat:', event.data);
+  console.log('heartbeat 수신:', event.data);
 });
 
-// Fired when receiving an event with a type of "notice"
+// 'notice' 타입의 이벤트를 수신할 때 발생
 events.addEventListener('notice', event => {
-  console.log('got notice:', event.data);
+  console.log('notice 수신:', event.data);
 })
 
-// The EventSource leaves the connection open. If we want to close the connection,
-// we need to call `close` on the EventSource object.
+// EventSource는 연결을 열어 둔 채로 둔다. 연결을 닫으려면,
+// EventSource 객체의 close 메서드를 호출해야 한다.
 function cleanup() {
   events.close();
 }

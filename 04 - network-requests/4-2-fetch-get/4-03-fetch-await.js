@@ -1,6 +1,6 @@
 /**
- * Example 4-3. Using Fetch with async/await
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 4-3. Fetch와 async/await 사용
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 async function loadUsers() {
@@ -8,11 +8,11 @@ async function loadUsers() {
     const response = await fetch('/api/users');
     return response.json();
   } catch (error) {
-    console.error('Error loading users:', error);
+    console.error('사용자를 읽는 중 에러 발생:', error);
   }
 }
 
 async function printUsers() {
   const users = await loadUsers();
-  console.log('Got users:', users);
+  console.log('사용자 목록:', users);
 }

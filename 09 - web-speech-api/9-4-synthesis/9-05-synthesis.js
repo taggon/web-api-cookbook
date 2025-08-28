@@ -1,6 +1,6 @@
 /**
- * Example 9-5. Speaking some text with the Web Speech API
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 9-5. 웹 스피치 API를 사용한 텍스트 읽기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 function speakText(text) {

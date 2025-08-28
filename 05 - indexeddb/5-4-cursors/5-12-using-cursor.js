@@ -1,16 +1,16 @@
 /**
- * Example 5-12. Searching string values with a cursor
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 5-12. 커서를 사용한 문자열 값 검색
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Searches for employees by name.
- * 
- * @param name A query string to match employee names
- * @param onSuccess Success callback that will receive the matching employees.
+ * 이름으로 직원을 검색한다.
+ *
+ * @param name 직원 이름 검색 문자열
+ * @param onSuccess 해당하는 직원 목록을 받을 콜백
  */
 function searchEmployees(name, onSuccess) {
-  // An array to hold all contacts with a name containing the query text.
+  // 검색 문자열을 이름에 포함하는 모든 직원을 저장할 배열
   const results = [];
 
   const query = name.toLowerCase();
@@ -19,19 +19,18 @@ function searchEmployees(name, onSuccess) {
     .transaction(['employees'], 'readonly')
     .objectStore('employees')
     .openCursor();
-  
 
-  // The cursor request will emit a `success` event for each object it finds
+  // 커서 요청에서는 발견한 객체마다 'success' 이벤트가 발생한다.
   request.addEventListener('success', () => {
     const cursor = request.result;
     if (cursor) {
       const name = `${cursor.value.firstName} ${cursor.value.lastName}`.toLowerCase();
-      // Add the contact to the result array if it matches the query.
+      // 일치하는 직원은 결과 배열에 추가한다.
       if (name.includes(query)) {
         results.push(cursor.value);
       }
 
-      // Continue to the next record.
+      // 다음 객체로 이동한다.
       cursor.continue();
     } else {
       onSuccess(results);
@@ -39,6 +38,6 @@ function searchEmployees(name, onSuccess) {
   });
 
   request.addEventListener('error', () => {
-    console.error('Error searching employees:', request.error);
+    console.error('직원을 검색하는 중 오류 발생:', request.error);
   });
 }

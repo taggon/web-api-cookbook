@@ -1,8 +1,8 @@
 /*
- * Example 6-8. Styling images to fade in
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 6-8. 이미지 페이드인을 위한 스타일
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 img.animate {
-  opacity: 0;
-  transition: opacity 500ms;
+    opacity: 0;
+    transition: opacity 500ms;
 }

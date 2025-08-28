@@ -1,6 +1,6 @@
 /**
- * Example 18-12. Checking for a supported video format
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 18-12. 지원하는 동영상 형식 확인
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 navigator.mediaCapabilities.decodingInfo({
@@ -14,6 +14,6 @@ navigator.mediaCapabilities.decodingInfo({
   }
 }).then(result => {
   if (result.supported) {
-    // This WebM configuration is supported
+    // WebM이 지원된다.
   }
 });

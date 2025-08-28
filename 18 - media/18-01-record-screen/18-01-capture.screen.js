@@ -1,6 +1,6 @@
 /**
- * Example 18-1. Capturing a video of the screen
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 18-1. 화면 녹화하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 async function captureScreen() {
@@ -8,7 +8,7 @@ async function captureScreen() {
   const mediaRecorder = new MediaRecorder(stream, {
     mimeType: 'video/webm'
   });
- 
+
   mediaRecorder.addEventListener('dataavailable', event => {
     const blob = new Blob([event.data], {
       type: 'video/webm',

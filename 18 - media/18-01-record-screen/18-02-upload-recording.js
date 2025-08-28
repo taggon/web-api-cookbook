@@ -1,10 +1,10 @@
 /**
- * Example 18-2. Uploading the captured screen recording
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 18-2. 녹화한 화면을 서버로 업로드하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const form = new FormData();
-// Here, `blob` is the blob created in the captureScreen method
+// 여기서 blob는 captureScreen에서 작성된 Blob 객체이다.
 formData.append('file', blob);
 
 fetch('/api/video/upload', {

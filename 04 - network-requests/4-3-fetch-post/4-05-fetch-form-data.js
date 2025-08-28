@@ -1,6 +1,6 @@
 /**
- * Example 4-5. Sending form data in a POST request
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 4-5. POST 요청을 통한 폼 데이터 전송
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 fetch('/login', {
@@ -11,6 +11,5 @@ fetch('/login', {
   }
 })
   .then(response => response.json())
-  .then(data => console.log('Logged in!', data))
-  .catch(error => console.error('Request failed:', error));
-  
+  .then(data => console.log('로그인 됐습니다!', data))
+  .catch(error => console.error('요청에 실패했습니다:', error));

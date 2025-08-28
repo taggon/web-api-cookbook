@@ -1,6 +1,6 @@
 /**
- * Example 3-10. Adding query parameters with set
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 3-10. set을 사용한 쿼리 파라미터 추가
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const url = new URL('https://example.com/api/search?objectType=user');

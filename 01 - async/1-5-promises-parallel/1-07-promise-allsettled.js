@@ -1,8 +1,8 @@
 /**
- * Example 1-7. Using Promise.allSettled
- * From "Web Browser API Cookbook" by Joe Attardi
- * 
- * Assumes there is a getUser function that returns a Promise.
+ * 예 1-7. Promise.allSettled 사용
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
+ *
+ * Promise를 반환하는 getUsers 함수가 있다고 가정한다.
  */
 
 Promise.allSettled([
@@ -12,10 +12,10 @@ Promise.allSettled([
 ]).then(results => {
   results.forEach(result => {
     if (result.status === 'fulfilled') {
-      console.log('- User:', result.value.name);
+      console.log('- 사용자:', result.value.name);
     } else {
-      console.log('- Error:', result.reason);
+      console.log('- 에러:', result.reason);
     }
   });
 });
-// No catch necessary here because allSettled is always fulfilled
+// allSettled는 항상 이행되므로 catch가 필요 없다.

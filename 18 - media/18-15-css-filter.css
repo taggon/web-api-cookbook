@@ -1,8 +1,8 @@
 /**
- * Example 18-15. Applying a filter
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 18-15. 필터 적용
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
- #canvas {
-  filter: hue-rotate(90deg);
+#canvas {
+    filter: hue-rotate(90deg);
 }

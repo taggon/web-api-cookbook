@@ -1,13 +1,13 @@
 /**
- * Example 3-3. Removing a URL's query parameters
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 3-3. URL의 쿼리 파라미터 제거
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 /**
- * Removes all parameters from an input URL.
- * 
- * @param inputUrl a URL string containing query parameters
- * @returns a new URL string with all query parameters removed
+ * 입력된 URL에서 모든 파라미터를 제거한다.
+ *
+ * @param inputUrl 쿼리 파라미터를 포함하는 URL 문자열
+ * @returns 모든 쿼리 파라미터가 제거된 새로운 URL 문자열
  */
 function removeAllQueryParameters(inputUrl) {
   const url = new URL(inputUrl);
@@ -15,5 +15,5 @@ function removeAllQueryParameters(inputUrl) {
   return url.toString();
 }
 
-// Results in 'https://example.com/api/users'
-removeAllQueryParams('https://example.com/api/users?user=sysadmin&q=user');
+// 반환 결과는 'https://example.com/api/users'
+removeAllQueryParameters('https://example.com/api/users?user=sysadmin&q=user');

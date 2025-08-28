@@ -1,21 +1,21 @@
 /**
- * Example 4-7. Sending a beacon
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 4-7. 비콘 전송
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const currentUser = {
   username: 'sysadmin'
 };
 
-// Some analytics data we want to capture
+// 보관하고 싶은 분석 데이터
 const data = {
   user: currentUser.username,
   lastVisited: new Date()
 };
 
-// Send the data before unload
+// 사용자가 떠나기 전에 데이터를 전송
 document.addEventListener('visibilitychange', () => {
-  // If the visibility state is 'hidden', that means the page just became hidden
+  // 가시성(visibility) 상태가 'hidden'이면 이 페이지가 지금 막 숨겨졌다는 의미다.
   if (document.visibilityState === 'hidden') {
     navigator.sendBeacon('/api/analytics', data);
   }
