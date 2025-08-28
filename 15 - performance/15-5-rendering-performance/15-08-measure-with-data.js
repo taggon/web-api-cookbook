@@ -1,20 +1,20 @@
 /**
- * Example 15-8. Measuring rendering performance with data
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 15-8. 데이터를 포함한 렌더링 성능 측정
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
-// Create the initial performance mark just before rendering
+// 렌더링 전에 첫 번째 성능 측정 지점을 생성한다.
 window.performance.mark('render-start');
 
-// Create the component and render the data
+// 데이터를 렌더링하는 컴포넌트를 생성한다.
 const dataView = new DataView();
 dataView.render(data);
 
-// When rendering is done, create the ending performance mark.
+// 렌더링이 완료되고 나면 종료 성능 측정 지점을 생성한다.
 window.performance.mark('render-end');
 
-// Create a measure between the two marks, passing the 
-// data being rendered as the measure detail.
+// 두 지점 사이의 차이를 측정한다.
+// 이번에는 렌더링한 데이터를 측정 결과의 detail로 전달한다.
 const measure = window.performance.measure('render', {
   start: 'render-start',
   end: 'render-end',

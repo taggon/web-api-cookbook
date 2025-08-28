@@ -1,6 +1,6 @@
 /**
- * Example 14-3. Listening for battery events
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 14-3. 배터리 이벤트 리스닝
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 battery.addEventListener('levelchange', () => {
@@ -8,5 +8,5 @@ battery.addEventListener('levelchange', () => {
 });
 
 battery.addEventListener('chargingchange', () => {
-  batteryChargingItem.textContent = battery.charging ? 'Charging' : 'Not charging';
+  batteryChargingItem.textContent = battery.charging ? '충전 중' : '충전 안함';
 });

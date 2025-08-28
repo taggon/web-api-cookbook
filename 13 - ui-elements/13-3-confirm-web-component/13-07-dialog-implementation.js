@@ -1,6 +1,6 @@
 /**
- * Example 13-7. The confirmation component implementation
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 13-7. 대화창 컴포넌트 구현
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 class ConfirmDialog extends HTMLElement {
@@ -25,15 +25,17 @@ class ConfirmDialog extends HTMLElement {
   }
 
   showConfirmation() {
-    // Pass through the call to showModal
-    this.dialog.showConfirmation();
+    this.dialog.showModal();
 
     return new Promise(resolve => {
-      // Listen for the next close event and resolve the Promise.
-      // Resolve the Promise with a boolean indicating whether or not the user confirmed.
+      // 다음 close 이벤트를 리스닝하고 Promise를 해결한다.
+      // Promise는 사용자의 확인 여부를 가리키는 불리언 값으로 해결된다.
       this.dialog.addEventListener('close', () => {
         resolve(this.dialog.returnValue === 'confirm');
-      }, { once: true });
+      }, {
+        // 이벤트는 한 번만 리스닝하고, 그 뒤에는 제거한다.
+        once: true
+      });
     });
   }
 }

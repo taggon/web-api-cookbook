@@ -1,6 +1,6 @@
 /**
- * Example 12-14. The profile card template
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-14. 프로필 카드 템플릿
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const template = document.createElement('template');

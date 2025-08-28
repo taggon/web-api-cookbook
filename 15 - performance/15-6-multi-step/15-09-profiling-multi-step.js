@@ -1,6 +1,6 @@
 /**
- * Example 15-9. Profiling a multi-step process
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 15-9. 다단계 처리 과정 프로파일링
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 window.performance.mark('transactions-start');

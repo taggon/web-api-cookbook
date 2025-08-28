@@ -1,10 +1,10 @@
 /**
- * Example 12-20. The disclosure component implementation
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-20. 더보기 컴포넌트 구현
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 class Disclosure extends HTMLElement {
-  // Watch the `open` attribute to react to changes.
+  // 'open' 속성의 변경을 감시한다.
   static observedAttributes = ['open'];
 
   constructor() {
@@ -20,13 +20,11 @@ class Disclosure extends HTMLElement {
     this.shadowRoot.querySelector('.toggle-button')
       .addEventListener('click', () => {
         if (this.hasAttribute('open')) {
-          // Content is currently showing; remove the `open`
-          // attribute and hide the content.
+          // 콘텐츠가 표시된 상태이다. 'open' 속성을 제거해 콘텐츠를 숨긴다.
           this.removeAttribute('open');
           this.content.hidden = true;
         } else {
-          // Content is currently hidden; add the `open` attribute 
-          // and show the content.
+          // 콘텐츠가 숨겨진 상태이다. 'open' 속성을 추가해 콘텐츠를 표시한다.
           this.setAttribute('open', '');
           this.content.hidden = false;
         }
@@ -34,7 +32,7 @@ class Disclosure extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // Update the content's hidden state based on the new attribute value.
+    // 새 속성값에 따라 콘텐츠의 hidden 상태를 업데이트한다.
     if (newValue !== null) {
       this.content.hidden = false;
     } else {
@@ -43,5 +41,5 @@ class Disclosure extends HTMLElement {
   }
 }
 
-// The element name must be hyphenated
+// 엘리먼트 이름에는 하이픈이 포함되어야 한다.
 customElements.define('x-disclosure', Disclosure);

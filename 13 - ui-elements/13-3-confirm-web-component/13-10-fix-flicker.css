@@ -1,8 +1,8 @@
 /**
- * Example 13-10. Fixing the flicker issue
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 13-10. 반짝임 문제 해결
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 confirm-dialog:not(:defined) {
-  display: none;
+    display: none;
 }

@@ -1,8 +1,7 @@
 /**
- * Example 17-15. Toggling a class conditionally
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 17-15. 조건에 따라 클래스를 토글하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
-// assume `isExpanded` is a variable with the current expanded
-// state
+// isExpanded는 현재 펼쳐진 상태를 가리키는 변수라고 가정한다.
 element.classList.toggle('expanded', isExpanded);

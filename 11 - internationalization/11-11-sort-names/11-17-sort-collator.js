@@ -1,6 +1,6 @@
 /**
- * Example 11-17. Sorting an array of names with Intl.Collator
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 11-17. Intl.Collator를 사용한 이름 배열 정렬
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const names = [

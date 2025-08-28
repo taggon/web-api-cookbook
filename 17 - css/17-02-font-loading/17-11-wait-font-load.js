@@ -1,9 +1,9 @@
 /**
- * Example 17-11. Waiting for the font to be loaded
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 17-11. 폰트를 다 읽을 때까지 기다리기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 roboto.load()
   .then(() => {
-    // Font has been loaded and is ready for use
+    // 폰트를 읽어 들여서 사용할 준비가 되었다.
   });

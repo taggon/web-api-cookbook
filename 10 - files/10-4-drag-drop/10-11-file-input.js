@@ -1,6 +1,6 @@
 /**
- * Example 10-11. Handling the file input
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 10-11. 파일 입력 다루기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const fileInput = document.querySelector('#file-input');

@@ -1,6 +1,6 @@
 /**
- * Example 16-1. The counter output
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 16-11. 카운터 출력
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 user: 1

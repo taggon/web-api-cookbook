@@ -1,10 +1,10 @@
 /**
- * Example 11-16. Formatting a list of user objects
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 11-16. 사용자 객체 목록의 형식 설정하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 function getUserListString(users, locale = 'en-US') {
-  // The locale of the ListFormat is configurable
+  // ListFormat의 로케일은 설정할 수 있다.
   const listFormat = new Intl.ListFormat(locale);
   return listFormat.format(users.map(user => user.username));
 }

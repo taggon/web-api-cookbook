@@ -1,9 +1,9 @@
 /**
- * Example 17-13. Slowing down the transition
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 17-13. 더 느린 전환 효과
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 2s;
+    animation-duration: 2s;
 }

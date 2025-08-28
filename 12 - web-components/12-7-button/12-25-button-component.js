@@ -1,6 +1,6 @@
 /**
- * Example 12-25. The button component
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-25. 버튼 컴포넌트
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 class StyledButton extends HTMLElement {

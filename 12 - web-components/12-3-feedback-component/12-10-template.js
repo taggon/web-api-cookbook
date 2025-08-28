@@ -1,6 +1,6 @@
 /**
- * Example 12-10. Creating the template
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-10. 템플릿 작성
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const template = document.createElement('template');
@@ -18,8 +18,8 @@ template.innerHTML = `
   </style>
 
   <div class="feedback-prompt">
-    <p>Was this helpful?</p>
-    <button type="button" data-helpful="true">Yes</button>
-    <button type="button" data-helpful="false">No</button>
+    <p>이 페이지의 내용이 도움이 되었나요?</p>
+    <button type="button" data-helpful="true">네</button>
+    <button type="button" data-helpful="false">아니요</button>
   </div>
 `;

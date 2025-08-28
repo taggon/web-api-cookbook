@@ -1,11 +1,10 @@
 /**
- * Example 10-9. Reading the dropped file
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 10-9. 드롭된 파일 읽고 표시하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 function showDroppedFile(file) {
-  // Read the file data and insert the loaded image
-  // into the page.
+  // 이미지 파일 데이터를 읽고 페이지에 표시한다.
   const reader = new FileReader();
   reader.addEventListener('load', event => {
     const image = document.querySelector('#placeholder');

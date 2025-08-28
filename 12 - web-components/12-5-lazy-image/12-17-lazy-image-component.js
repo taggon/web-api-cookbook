@@ -1,6 +1,6 @@
 /**
- * Example 12-17. The LazyImage component
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 12-17. LazyImage 컴포넌트
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 class LazyImage extends HTMLElement {
@@ -15,7 +15,7 @@ class LazyImage extends HTMLElement {
   connectedCallback() {
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
-        console.log('Loading image');
+        console.log('이미지 로딩 중');
         this.image.src = this.getAttribute('src');
         observer.disconnect();
       }

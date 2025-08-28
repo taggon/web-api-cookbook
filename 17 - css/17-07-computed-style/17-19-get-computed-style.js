@@ -1,6 +1,6 @@
 /**
- * Example 17-19. Getting the computed style
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 17-19. 계산된 스타일 가져오기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const content = document.querySelector('#content');

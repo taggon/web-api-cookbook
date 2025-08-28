@@ -1,6 +1,6 @@
 /**
- * Example 11-12. Formatting gigabytes
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 11-12. 기가바이트 포맷하기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
 const format = new Intl.NumberFormat(navigator.language, {
@@ -8,5 +8,5 @@ const format = new Intl.NumberFormat(navigator.language, {
   unit: 'gigabyte'
 });
 
-// prints "1,000 GB"
+// "1,000GB" 출력
 console.log(format.format(1000));

@@ -1,8 +1,8 @@
 /**
- * Example 15-7. Looking up a measure by name
- * From "Web Browser API Cookbook" by Joe Attardi
+ * 예 15-7. 이름으로 측정값 찾기
+ * 출처 - "실무로 통하는 웹 API" by 조 아타디
  */
 
-// There is only one `render` measure, so you can use
-// array destructuring to get the first (and only) entry.
+// 'render' 측정 결과는 하나 밖에 없으므로 반환된 배열을
+// 구조 분해 할당하여 첫 번째 (그리고 유일한) 엔트리를 가져온다.
 const [renderMeasure] = window.performance.getEntriesByName('render');
